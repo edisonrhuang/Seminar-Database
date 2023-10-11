@@ -1,0 +1,58 @@
+8/25/23 Notes
+SeminarManager:
+	- Read the file name
+	- Passes the file name to CommandProcessor
+
+CommandProcessor:
+	- Passes the command (insert, delete) to the SeminarDB
+	- Read the file line by line
+	- Should be able to read the input file and read the insert/delete commands
+	- Actually holds the commands to properly insert, delete, etc.
+	- Shouldn't be making any change to the actual HashTable
+
+SeminarDB:
+	- SeminarDB should talk to two classes, the MemoryManager class, and the HashTable class.
+	- MemManager Should only know bytes, nothing about seminars.
+	- HashTable
+	- Should interact with the CommandProcessor
+	- Should have insert, delete, etc. methods.
+	
+MemoryManger:
+	- Seminars should be inserted into the MemoryManager
+	
+HashTable:
+	- Is an array of Keys and Records, where the Record has a handle that point to the memory.
+	- HashTable is not storing seminars, just keys and records.
+	
+Record Class:
+	- Object of the Handle class and key
+
+Handle Class:
+
+What is needed for Milestone 2:
+	- CommandProcessor
+	- HashTable -> with insert and print, basic search and delete
+
+What is needed for Milestone 3:
+	- Full HashTable function
+	- MemoryManager
+	
+
+8/28 Notes:
+SeminarDB:
+	- Should find HashTable and find if spot is available.
+	- Insert into memory
+	- Into into HashTable
+	
+MemoryManager:
+	- Array of bytes
+	
+Fragmentation:
+	- Buddy method, free blocks with sizes of base 2, stored in a linked list.
+
+9/8 Notes:
+- An array of bytes for the memory pool itself
+- Linked list of double linked list of free blocks
+- Free blocks
+- Make a block class. Block stores the starting position being stored, also the left and the right
+- When you a free a block, remember to reflect it on the blocks
